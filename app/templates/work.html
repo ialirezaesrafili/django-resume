@@ -1,0 +1,11 @@
+<section class="experience-list-container" id="work">
+    <h1 class="heading">W<span>ORK</span></h1>
+    <ul class="experience-list">
+        {% for key, experience in developer_experiences.items %}
+            <li class="experience-item">
+                <h3>{{ experience.title }}</h3>
+                <p>{{ experience.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
