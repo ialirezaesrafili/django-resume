@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from django.contrib import staticfiles
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -94,16 +96,17 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
 STATIC_URL = '/static/'
 
-# Directory where static files are collected for production (optional, but recommended for deployment)
-
+# Directory where static files are collected for production (mandatory for deployment)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Changed from 'static' to 'staticfiles'
 
 # Additional directories to look for static files (optional)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),  # This is where Django will look for static files during development
 ]
+
+# Default primary key field type
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
